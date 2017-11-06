@@ -1,0 +1,115 @@
+/**
+ * Grenoble-inp theme for reveal.js. Inspired by 'white' theme.
+ *
+ * By Ronald PHLYPO
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+$backgroundImage: url(./css/layout/images/inp-corner.png);
+
+$mainColor: #222;
+$headingColor: #222;
+
+$mainFontSize: 28px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontVariant: small-caps;
+$headingFontWeight: normal; //600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+$SecondLevelFontSize: small;
+$leftMargin: 30px;
+$headerMargin: 30px;
+//$secondLevelFontSize: 70%;
+
+$heading1Size: 2em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+$headingMargin: 0 40px $blockMargin 0;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+/*@mixin bodyBackground() {
+	background-image: $backgroundImage;
+	//background-size: contain;
+	background-repeat: no-repeat;
+	background-position: -$leftMargin -$headerMargin;
+}*/
+
+body {
+	width: 70%;
+}
+
+.reveal section{
+	text-align: left;
+	margin: 0px -20px 0px 20px;
+}
+
+// Used as slide title
+.reveal h1,
+.reveal h2,
+.reveal h4,
+.reveal h5,
+.reveal h6{
+	text-align: center;
+}
+
+.reveal h3 {
+	text-align: right;
+}
+
+.reveal section img {
+	margin: 0px 0px;
+	background: rgba(255,255,255,0.12);
+	border: 0px;
+	box-shadow: 0;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+	display: inline; // inline-block
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+.reveal ul ul
+.reveal ol ol
+.reveal ul ol
+.reveal ol ul{
+	margin: 0;
+}
+
+.reveal ul ul li
+.reveal ol ol li
+.reveal ul ol li
+.reveal ol ul li{
+	font-size: $SecondLevelFontSize;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

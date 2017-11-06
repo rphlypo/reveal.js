@@ -4,13 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Scientific Python</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/grenoble-inp.css">
+		<link rel="stylesheet" href="css/layout/grenoble-inp-pagelayout.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/github.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -21,13 +22,71 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
+
 	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+		<!--setting up the Grenoble INP page layout-->
+		<div id="wrapper">
+		    <div id="header"></div>
+		    <div id="sidebar"></div>
+				<div id="corner"></div>
+				<div id="footer"></div>
+
+				<!-- the next line comes from https://help.pythonanywhere.com/pages/EmbeddedConsoles ; width and height handled in CSS -->
+				<iframe id="PyAn-console" name="embedded_python_anywhere" src="https://www.pythonanywhere.com/embedded3/" style="visibility:hidden"></iframe>
+				<!-- no Python without Monty : source http://www.montypython.com/pythonland/ -->
+				<a id="PyAn-console-close" onclick="PyAnConsole('close'); return false;"  style="visibility:hidden" href="#"><img src="./images/close.png" height="100%" align="middle"></img></a>
+				<a id="PyAn-console-open" onclick="PyAnConsole('open'); return false;" style="visibility:visible" href="https://www.pythonanywhere.com/embedded3/"><img src="./images/codeblock2.png" height="100%" align="right"></a>
+
+				<div id="content">
+					<!--true reveal.js content starts here-->
+					<div class="reveal">
+						<div class="slides">
+							<section data-markdown data-state='title'>
+								# Scientific Python
+								#### [Ronald Phlypo](mailto:ronald.phlypo@grenoble-inp.fr)
+								#### Day I &mdash; session 2017&ndash;2018
+							</section>
+
+							<!-- Part 1: Python philosophy and history -->
+							<section>
+								<section data-state='aftertitle' data-markdown='markdownslides/python-philosophy.md' data-charset='iso-8859-2'>
+								</section>
+							</section>
+
+							<!-- Part 2: variables in Python -->
+							<section>
+								<section data-markdown='markdownslides/variables.md' data-charset='iso-8859-2'>
+								</section>
+							</section>
+
+							<!-- Part 3 : Flow control -->
+							<section>
+								<section data-markdown='markdownslides/flow-control.md' data-charset='iso-8859-2'>
+								</section>
+							</section>
+
+							<!-- Part 4: functions -->
+							<section>
+								<section data-markdown='markdownslides/functions.md' data-charset='iso-8859-2'>
+								</section>
+							</section>
+
+							<!-- Part 5: Exceptions and assertions (nose tests ?) -->
+							<section>
+								<section data-markdown='markdownslides/exceptions.md' data-charset='iso-8859-2'>
+								</section>
+							</section>
+
+							<!-- Part 6: object-oriented programming -->
+							<section>
+								<section data-markdown='markdownslides/object-oriented.md' data-charset='iso-8859-2'>
+								</section>
+							</section>
+
+						</div> <!-- end slides -->
+					</div> <!-- end reveal -->
+				</div> <!-- end content -->
+			</div> <!-- end wrapper -->
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
@@ -37,13 +96,64 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				slideNumber: true,
+				markdown: {
+					gfm: true
+				},
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
+					// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+					// Interpret Markdown in <section> elements
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+					// Syntax highlight for <code> elements
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+					// Zoom in and out with Alt+click
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+
+					// Speaker notes
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+					// MathJax
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>
+
+		<script>
+		Reveal.addEventListener('title', function() {
+			document.getElementById("footer").style.backgroundImage = "url(./css/layout/images/inp-title-footer.png)";
+			document.getElementById("footer").style.height = "80px";
+			document.getElementById("footer").style.bottom = "80px";
+			document.getElementById("PyAn-console-open").style.visibility = "hidden";
+		})
+		Reveal.addEventListener('aftertitle', function() {
+			document.getElementById("footer").style.backgroundImage = "url(./css/layout/images/inp-footer.png)";
+			document.getElementById("footer").style.height = "40px";
+			document.getElementById("footer").style.bottom = "40px";
+			document.getElementById("PyAn-console-open").style.visibility = "visible";
+		})
+		</script>
+
+		<script>
+		function PyAnConsole(action) {
+			var divel = document.getElementById("PyAn-console");
+			var divelclose = document.getElementById("PyAn-console-close");
+			var divelopen = document.getElementById("PyAn-console-open");
+		  if (action == "open") {
+		  	divel.style.visibility = "visible";
+				divelclose.style.visibility = "visible";
+				divelopen.style.visibility = "hidden";
+		  } else {
+		  	divel.style.visibility = "hidden";
+				divelclose.style.visibility = "hidden";
+				divelopen.style.visibility = "visible";
+		  }
+		}
+		</script>
+
 	</body>
 </html>

@@ -1,0 +1,389 @@
+## Part II
+### Variables and variable manipulation in python
+
+````python
+a = int()             # initialisation (no mere declaration!)
+b = "Hello world!"    # No declaration, only initialisation
+b = 3                 # Type change without any problem
+b == 3.0              # dynamic variables ! b is casted to float before comparison
+````
+
+---
+
+### data types in Python
+
+* different types = different functionalities
+
+  * scalars: `bool`, `int`, `float`, `complex`
+
+  * strings: `string`
+
+  * sequences: `list`, `tuples`
+
+  * collections: `list`, `dictionary`, `set`
+
+* data type inspection &rightarrow; `type( )`
+
+* Exercise: data types
+
+
+---
+
+### indexing in Python
+
+Example `x = [1, 2, 3, 4, 5, 6]`
+
+* python = `0`-based indexing `x[0] = 1`
+
+* tail-based indexing through negative numbers `x[-1] = 6`
+
+* Exercise : simple indexing
+
+---
+
+### indexing in Python
+
+* the slicer `:` (lists, tuples, strings)
+
+  * `start:stop` all elements from index `start` to `stop` (not included)
+
+  * `:stop` all elements up to (but not including) index `stop`
+
+  * `start:` all elements from `start` on
+
+  * `start:stop:step`: all elements from `start` to `stop`, stepping by `step`
+
+  * also valid `start::step`, `:stop:step` and `::step`
+
+````python
+s = "Hello world!"
+s[4:7]
+s[:5]  # Hello
+s[6:]  # world!
+s[:-1] # Hello world
+s[3:-2:2] # l ol
+s[::-1] # !dlrow olleH
+````
+
+---
+
+### basic operators in Python (1/5)
+
+* assignment: `=`
+
+* mathematical operators: `+`, `-`, `*`, `/`, `//`, `%`, `**`
+
+* string / list of string operators: `+`, `join`, `split`, ...
+
+* list operators: `+`, `append`, `extend`, `pop`, `insert`, `index`, ...
+
+* mixed operators: `*`
+
+````python
+a = "Hello "
+b = "world! "
+(a+b) * 3     # mixed operator combining string & int
+````
+
+---
+
+### basic operators in Python (2/5)
+
+* comparison operators `<`, `>`, `<=`, `>=`, `==`, `!=`
+
+* inline operators `+=`, `-=`, `*=`, `/=`, `%=`, `//=`
+
+* membership operator `in`
+
+* logical operators `&`, `|`, `^`, `~` (bitwise), `and`, `or`, `^` (xor), `and`, `not`
+
+* identity operator `is`
+
+* bitwise shifts `<<`, `>>`
+
+---
+
+### basic operators in Python (3/5)
+
+(mathematical) operators are evaluated as
+
+1. parentheses first
+
+1. order of precedence
+
+  2. `**`
+  2. `*`, `/`, `//`, `%`
+  2. `+`, `-`
+
+1. from left to right
+
+---
+
+| Operator | Description |
+|:---------|:------------|
+| **       | exponentation |
+| ~ + -    | complement, __unary__ plus and minus |
+| * / % // | multiply, divide, modulo and floor division |
+| + -      | addition and subtraction |
+| >> <<    | right and left bitwise shift |
+| &        | bitwise __and__ |
+| ^ &vert; | bitwise exclusive and regular __or__ |
+| <= < > >= | comparison operators |
+| <> == != | equality operators |
+| = %= /= //= -= += *= **= | inline assignment operators |
+| is, is not | __identity__ operators |
+| in, not in | membership operators |
+|not, or, and | logical operators |
+
+---
+
+### basic operators in Python (5/5)
+
+Exercise: what truth value (`True` or `False`) should the following expressions return ?
+
+````python
+5 == 5
+5 == 5.0
+5 is 5
+5 is 5.0
+"Python" in "Monty Python"
+"Python" == "python"
+1 in [1, 2, 3]
+1 not in [1, 2, 3]
+1 in [[1, 2], 3]
+1 in {1, 2, 3}
+(4 < 5) ^ (6 > -1)
+x >> k == x // 2 ** k
+````
+
+---
+
+### strings and docstrings (1/2)
+
+* strings are encapsulated by ' ' or " " (''' ''' or """ """ for multiline)
+
+* docstrings start with # or are encapsulated by """   """ (multiline)
+
+````{python}
+s1 = "Hello world!"     # basic string of which I'm the docstring
+s2 = "Spam and Eggs"    """ I'm a multiline
+                        docstring, documenting
+                        myself
+                        """
+s3 = """ This is
+a multiline
+string
+"""                     # a multiline string of which I'm the docstring
+````
+
+---
+
+### strings and docstrings (2/2)
+
+* `<string>.format(<value>)`
+
+    * string contains `{}` &rightarrow; in order of presentation
+
+    * string contains `{<key>}` &rightarrow; key&mdash;value pairs
+
+    * string contains `{<key> : <formatter>}` &rightarrow; formatting is chosen
+
+````python
+"I am a {}".format("string")
+"x equals {}, y equals {}".format(3, 5)           # order of appearance
+"x equals {x}, y equals {y}".format(x = 3, y = 7) # key-value pairs
+"x equals {:.5g}".format(1/3)
+"x equals {x:.5g}, y equals {y:.5f}".format(x = 10/3, y = 10/7)
+
+````
+
+---
+
+### number representation (1/5)
+
+computers = manipulation of __bits__
+
+* integers &#10004;
+
+* &Rightarrow; rational numbers &#10004;
+
+  * irrational numbers ? transcendent numbers ?
+
+  * RSA &rightarrow; factorisation of primes = difficult
+
+    &Rightarrow; fraction approximation of real numbers = difficult
+
+  * easier : denominator = $2^k, k\in\mathbb Z$
+
+
+---
+
+### number representation (2/5)
+
+* decimal number system
+
+  * $x=(-1)^s\sum_{k=-\infty}^{+\infty}a_k\ 10^k\qquad$    for    $\qquad a_k\in [0,\,9]\cap \mathbb{Z}$
+
+  * s is the sign $\in\{0,\,1\}$
+
+* binary number system
+
+  * $x=(-1)^s\sum_{k=-\infty}^{+\infty}b_k\ 2^k\qquad$    for    $\qquad s, b_k\in \{0,\,1\}$
+
+  * signed/unsigned, little/big endian, base-2 binary representation
+
+  * stored in memory by byte : 1 Byte = 2 hex = 8 bit $\in \lbrace 0,\,1,\,\ldots,\,9,\,A,\,B,\,C,\,D,\,E,\,F \rbrace^2$, e.g., AF
+
+Note:
+big/little endian : most/least significant byte in lowest memory
+
+---
+
+### number representation (3/5)
+
+* Example 1: decimal 23
+
+$$\begin{align}23 &= 2\times 10^1 + 3\times 10^0\newline &=  1\times 2^4 + 0 \times 2^3 + 1\times 2^2 + 1\times 2^1 + 1\times 2^0=\_b 10111\newline &= \_B 17\end{align}$$
+
+* Example 2 : decimal 1025
+
+````python
+x = 23
+x.to_bytes(1, 'big')
+y = 1025
+y.to_bytes(2, 'big')     # big endian
+y.to_bytes(2, 'little')  # little endian
+````
+
+---
+
+### number presentation (4/5)
+
+* representing __any__ number
+
+  * `float`: __IEEE 754-2008__
+
+  * s = _sign_, c = _significand_, q = _exponent_, b = _base_ (_radix_)
+
+    $x = -1^s\times c\times b^q = (-1)^s\times c \times b^q$
+
+  * representation for `qNaN`n `sNaN`, `-Inf`, `+Inf` (overflow)
+
+Note:
+quiet NaN and signalling NaN
+
+* Any number is __represented__ (approximated through a finite, truncated representation)
+
+  * e.g., 1/10 : easy in decimal (fractional) representation, difficult in binary representation
+
+---
+
+### number representation (5/5)
+
+* Exercise
+
+````python
+x = 1/10
+print(x)
+x.as_integer_ratio()
+print("x = {:.6g}".format(x))  # 6 significative digits / format(x, '.6g')
+format(x, '.24g') # 24 significative digits
+y = 3 * 10 - 1
+print(y)
+format(y, '.24g') # 24 significative digits
+y.as_integer_ratio()
+````
+
+---
+
+### declaration, initialisation, and allocation (1/3)
+
+* __declaration__ = type &amp; name ; pointer to memory address
+
+* __allocation__ = allocate specific value to memory block
+
+* __initialisation__ = declaration + allocation
+
+---
+
+### declaration, initialisation, and allocation (2/3)
+
+
+````C
+int a; // declaration : 'a' points to (random) 'int'-sized memory
+a = 3; // allocation : x0000 0000 0000 0011 into memory
+string b = "Hello world!"; // initialisation
+````
+
+````python
+a = int() # initialisation : a --> memory containing '0'
+a = 3     # same memory now contains '3'
+b = "Hello world!" # b --> another memory block
+````
+
+---
+
+### declaration, initialisation, and allocation (3/3)
+
+All types in Python have their __constructor__
+
+* `x = {1, 2, 3}` is equivalent to `x = set([1, 2, 3])`
+
+* `x = [1, 2, 3]` is equivalent to `x = list([1, 2, 3])`
+
+* `x = 5` is equivalent to `x = int(5.0)`
+
+
+### More on lists, sets, dictionaries, and tuples (1/)
+
+Strings are not lists
+
+````python
+l = ['An', 'introductory', 'course', 'to', 'Python', 'programming']
+l[4]
+s = "An introductory course to Python programming"
+s[4]
+````
+
+---
+
+### More on lists, sets, dictionaries, and tuples (2/)
+
+sets and dictionaries are __unordered__
+
+````python
+p = {1, 2, 3, 4}
+p[0]
+d = {"a": 1, "b": 2, "c": 3}
+d[0]
+````
+
+---
+
+### More on lists, sets, dictionaries, and tuples (3/)
+
+lists, dictionaries, and sets are mutable
+
+* object is passed by _reference_
+
+````python
+L = [1, 2, 3, 4]
+L[0] = 0
+print(L)
+d = {0: 1, 1: 2, 2: 3} # anything hashable can be a key in a dictionary
+d[1] = 4
+print(d)
+````
+
+---
+
+### More on lists, sets, dictionaries, and tuples (4/)
+
+tuples, ints, floats, strings, frozensets, ... are immutable
+
+* object is hashable (means there it has a unique `key` &rightarrow; indexing)
+
+````python
+x = (1, 2, 3)
+x[0] = 0
+````

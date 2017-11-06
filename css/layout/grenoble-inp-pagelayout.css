@@ -1,0 +1,113 @@
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    width: 100%;
+    margin: 0 0 0 0; /* the bottom margin is the negative value of the footer's height */
+    position: relative
+}
+
+#corner {
+  position: fixed;
+  height: 600px;
+  width: 600px;
+  top: 0;
+  left: 0;
+  background-image: url(./images/inp-corner.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+}
+
+#footer {
+    background-image: url(./images/inp-footer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 40px; /* height + top/bottom paddding + top/bottom border must add up to footer height */
+    width: 70%;
+    position: fixed;
+    bottom: 40px;
+    left: 15%;
+}
+
+#PyAn-console{
+  position: fixed;
+  /*bottom: calc((100% - 520px) / 2);*/
+  top: 50px;
+  right: 0;
+  width: 700px;
+  height: 480px;
+  z-index: 2147483647; /* maximum available z-value in modern browsers */
+}
+
+#PyAn-console-open{
+  background-image: url(./images/codeblock.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  position: fixed;
+  top: 50px; /* -50px - 480px/2 + 100px / 2*/
+  right: 5px;
+  height: 10%;
+  z-index: 2147483647;
+}
+
+#PyAn-console-close{
+  /* background-image: url(./images/close.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;*/
+  position: fixed;
+  top: 40px;
+  right: 710px;
+  width: 20px;
+  height: 20px;
+  z-index: 2147483647;
+}
+
+.push {
+    float: top;
+    height: 0px;
+    top: 0;
+    left: 0;
+}
+
+#content{
+  position: fixed;
+  top: 0%;
+  left: 10%;
+  width: 80%;
+  height: 95%;
+
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background: #cbd3df; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#cbd3df, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#cbd3df, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#cbd3df, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#cbd3df, white); /* Standard syntax */
+    text-align: right;
+}
+
+#content {
+    height: 100%;
+}
+
+#sidebar {
+    background-color: #3f5970;
+    width: 17px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    bottom: 0px;
+}
+#main {
+    margin-left: 32px
+}
