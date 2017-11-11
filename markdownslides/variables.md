@@ -24,24 +24,35 @@ b == 3.0              # dynamic variables ! b is casted to float before compari
 
 * data type inspection &rightarrow; `type( )`
 
-* Exercise: data types
-
-
----
-
-### indexing in Python
-
-Example `x = [1, 2, 3, 4, 5, 6]`
-
-* python = `0`-based indexing `x[0] = 1`
-
-* tail-based indexing through negative numbers `x[-1] = 6`
-
-* Exercise : simple indexing
+<div class="exo ">data types</div>
 
 ---
 
-### indexing in Python
+### indexing in Python (1/2)
+
+Example
+
+````python
+x = [1, 2, 3, 4, 5, 6]
+````
+
+* python: `0`-based indexing
+
+    ````python
+    x[0] = 1
+    ````
+
+* tail-based indexing: negative numbers
+
+    ````
+    x[-1] = 6
+    ````
+
+<div class="exo">indexing</div>
+
+---
+
+### indexing in Python (2/2)
 
 * the slicer `:` (lists, tuples, strings)
 
@@ -156,6 +167,8 @@ Exercise: what truth value (`True` or `False`) should the following expressions 
 x >> k == x // 2 ** k
 ````
 
+<div class="exo">operators</div>
+
 ---
 
 ### strings and docstrings (1/2)
@@ -196,6 +209,8 @@ string
 "x equals {x:.5g}, y equals {y:.5f}".format(x = 10/3, y = 10/7)
 
 ````
+
+<div class="exo">strings</div>
 
 ---
 
@@ -294,6 +309,8 @@ format(y, '.24g') # 24 significative digits
 y.as_integer_ratio()
 ````
 
+<div class="exo">representation</div>
+
 ---
 
 ### declaration, initialisation, and allocation (1/3)
@@ -312,7 +329,7 @@ y.as_integer_ratio()
 ````C
 int a; // declaration : 'a' points to (random) 'int'-sized memory
 a = 3; // allocation : x0000 0000 0000 0011 into memory
-string b = "Hello world!"; // initialisation
+string b = "Hello world!"; // initialisation = declaration + allocation
 ````
 
 ````python
@@ -325,29 +342,46 @@ b = "Hello world!" # b --> another memory block
 
 ### declaration, initialisation, and allocation (3/3)
 
-All types in Python have their __constructor__
+data type &rightarrow; __constructor__
 
-* `x = {1, 2, 3}` is equivalent to `x = set([1, 2, 3])`
+* `x = set([1, 2, 3])` equivalent to `x = {1, 2, 3}`
 
-* `x = [1, 2, 3]` is equivalent to `x = list([1, 2, 3])`
+* `x = list([1, 2, 3])` equivalent to `x = [1, 2, 3]`
 
-* `x = 5` is equivalent to `x = int(5.0)`
+* `x = int(5.0)` equivalent to `x = 5`
 
+also allows to __cast__ variables (change data type)
 
-### More on lists, sets, dictionaries, and tuples (1/)
+````python
+x = "5"
+print("x is of type {}".format(type(x)))
+y = int(x)
+print("y is of type {}".format(type(y)))
+z = tuple(y)
+print("z is of type {}".format(type(z)))
+````
+
+<div class="exo">casting</div>
+
+---
+
+### More on containers: mutable or immutable (1/4)
 
 Strings are not lists
 
+* strings can be indexed as lists &#8230;
+
+* &#8230; but no reassignment
+
 ````python
-l = ['An', 'introductory', 'course', 'to', 'Python', 'programming']
-l[4]
-s = "An introductory course to Python programming"
-s[4]
+s = "spam eggs"
+s[4] = " and "
+TypeError
 ````
 
 ---
 
-### More on lists, sets, dictionaries, and tuples (2/)
+### More on lists, sets, dictionaries, and tuples (2/4)
 
 sets and dictionaries are __unordered__
 
@@ -360,30 +394,36 @@ d[0]
 
 ---
 
-### More on lists, sets, dictionaries, and tuples (3/)
+### More on lists, sets, dictionaries, and tuples (3/4)
 
 lists, dictionaries, and sets are mutable
 
 * object is passed by _reference_
 
-````python
-L = [1, 2, 3, 4]
-L[0] = 0
-print(L)
-d = {0: 1, 1: 2, 2: 3} # anything hashable can be a key in a dictionary
-d[1] = 4
-print(d)
-````
+  contents are changed __without__ changing its reference
+
+* int, float, str, frozenset, tuple are immutable
+
+  changing contents erases its contents and creates a new object
+
+<div class="exo">containers</div>
 
 ---
 
-### More on lists, sets, dictionaries, and tuples (4/)
+### More on lists, sets, dictionaries, and tuples (4/4)
 
-tuples, ints, floats, strings, frozensets, ... are immutable
+`tuple`, `int`, `float`, `string`, `frozenset`, &#8230; &rightarrow; immutable
 
-* object is hashable (means there it has a unique `key` &rightarrow; indexing)
+* object is hashable (unique `id`) &rightarrow; indexing
 
 ````python
 x = (1, 2, 3)
+x[0]
 x[0] = 0
+````
+
+````python
+s = "Hello world!"
+s[-1]
+s[-1] = "s"
 ````
