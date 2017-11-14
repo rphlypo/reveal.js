@@ -1,4 +1,4 @@
-## Part III
+## Part IV
 ### Flow control
 
 ````python
@@ -18,7 +18,7 @@ while motivated:
 
 * Exception ("error") &rightarrow; if not handled, code execution is stopped
 
-* handling Exceptions &rightarrow; `try` &#8230; `except` &#8230; `finally`
+* handling Exceptions &rightarrow; `try` &#8230; `except` (&#8230; `finally`)
 
     ````python
     try:
@@ -26,8 +26,6 @@ while motivated:
         print("All is well")
     except:
         print("Exception occurred")
-    finally:
-        print("I'm always there")
     ````
 
     ````python
@@ -35,23 +33,49 @@ while motivated:
         L = [1, 2]
         L[5]
         print("All is well")
-    except ZeroDivisionError:           # filter exceptions,
-        print("Exception occurred")  # others handled separately
-    finally:
-        print("I'm always there")
+    except ZeroDivisionError:                          # filter ZeroDivisionError exception
+        print("ZeroDivisionError Exception occurred")  
+    except:                                            # others handled separately
+        print("Any other exception lands here")
     ````
 
 <div class="exo">Exceptions</div>
 
 ---
 
-### Logical predicates and the if-statement
+### logical predicates
 
 * 2 boolean values : `True` and `False`
 
 * comparison operators : `==`, `>`, `<`, `<=`, `>=`, `~=`, `is`
 
-* `if`-statement : `if` &#8230; `elif` &#8230; `else`
+    * `==`: similar or equality in value
+
+    * `is`: same thing
+
+* negation: `not`, `^`
+
+
+````python
+print(True == 1)         # 1 is similar to a boolean True value
+print(True is 1)         # however, it is not the boolean True value
+print(True == 1 is True) # operator precedence?
+````
+
+---
+
+### combining logical predicates
+
+* joining by logical operations
+
+    * `and`, `or`
+
+---
+
+### Logical predicates and the if-statement
+
+
+* `if`-statement : `if` (&#8230; `elif`) (&#8230; `else`)
 
 ````python
 weather = "rainy" # other possibilities: "sunny", "cloudy"

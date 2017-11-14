@@ -1,11 +1,10 @@
 ## Part III
-### Functions and flow control
+### Functions
 
 ~~~~{.python}
 def square(x):
     return x ** 2
-for x in range(6)
-    print("{x} * {x} = {y}".format(x=x, y=square(x)))
+s = [square(x) for x in range(1, 11)]
 ~~~~
 
 ---
@@ -16,7 +15,7 @@ for x in range(6)
 
   * function declaration: __def__
 
-  * function arguments: keys or key-value pairs 
+  * function arguments: keys or key-value pairs
 
 ~~~~{.python}
 def square(x):  # declaration
