@@ -1,12 +1,12 @@
 ## Part III
 ### Variables and variable manipulation in python
 
-````python
+```python
 a = int()             # initialisation (no mere declaration!)
 b = "Hello world!"    # No declaration, only initialisation
 b = 3                 # Type change without any problem
 b == 3.0              # dynamic variables ! b is casted to float before comparison
-````
+```
 
 ---
 
@@ -32,21 +32,21 @@ b == 3.0              # dynamic variables ! b is casted to float before compari
 
 Example
 
-````python
+```python
 x = [1, 2, 3, 4, 5, 6]
-````
+```
 
 * python: `0`-based indexing
 
-    ````python
+    ```python
     x[0] = 1
-    ````
+    ```
 
 * tail-based indexing: negative numbers
 
-    ````
+    ```
     x[-1] = 6
-    ````
+    ```
 
 <div class="exo">indexing</div>
 
@@ -66,7 +66,7 @@ x = [1, 2, 3, 4, 5, 6]
 
   * also valid `start::step`, `:stop:step` and `::step`
 
-````python
+```python
 s = "Hello world!"
 s[4:7]
 s[:5]  # Hello
@@ -74,7 +74,7 @@ s[6:]  # world!
 s[:-1] # Hello world
 s[3:-2:2] # l ol
 s[::-1] # !dlrow olleH
-````
+```
 
 ---
 
@@ -90,11 +90,11 @@ s[::-1] # !dlrow olleH
 
 * mixed operators: `*`
 
-````python
-a = "Hello "
-b = "world! "
-(a+b) * 3     # mixed operator combining string & int
-````
+    ```python
+    a = "Hello "
+    b = "world! "
+    (a+b) * 3     # mixed operator combining string & int
+    ```
 
 ---
 
@@ -152,7 +152,7 @@ b = "world! "
 
 Exercise: what truth value (`True` or `False`) should the following expressions return ?
 
-````python
+```python
 5 == 5
 5 == 5.0
 5 is 5
@@ -165,7 +165,7 @@ Exercise: what truth value (`True` or `False`) should the following expressions 
 1 in {1, 2, 3}
 (4 < 5) ^ (6 > -1)
 x >> k == x // 2 ** k
-````
+```
 
 <div class="exo">operators</div>
 
@@ -177,17 +177,17 @@ x >> k == x // 2 ** k
 
 * docstrings start with # or are encapsulated by """   """ (multiline)
 
-````{python}
-s1 = "Hello world!"     # basic string of which I'm the docstring
-s2 = "Spam and Eggs"    """ I'm a multiline
-                        docstring, documenting
-                        myself
-                        """
-s3 = """ This is
-a multiline
-string
-"""                     # a multiline string of which I'm the docstring
-````
+    ```{python}
+    s1 = "Hello world!"     # basic string of which I'm the docstring
+    s2 = "Spam and Eggs"    """ I'm a multiline
+                            docstring, documenting
+                            myself
+                            """
+    s3 = """ This is
+    a multiline
+    string
+    """                     # docstring of multiline string
+    ```
 
 ---
 
@@ -201,14 +201,13 @@ string
 
     * string contains `{<key> : <formatter>}` &rightarrow; formatting is chosen
 
-````python
-"I am a {}".format("string")
-"x equals {}, y equals {}".format(3, 5)           # order of appearance
-"x equals {x}, y equals {y}".format(x = 3, y = 7) # key-value pairs
-"x equals {:.5g}".format(1/3)
-"x equals {x:.5g}, y equals {y:.5f}".format(x = 10/3, y = 10/7)
-
-````
+    ```python
+    "I am a {}".format("string")
+    "x equals {}, y equals {}".format(3, 5)           # order of appearance
+    "x equals {x}, y equals {y}".format(x = 3, y = 7) # key-value pairs
+    "x equals {:.5g}".format(1/3)
+    "x equals {x:.5g}, y equals {y:.5f}".format(x = 10/3, y = 10/7)
+    ```
 
 <div class="exo">strings</div>
 
@@ -224,7 +223,7 @@ computers = manipulation of __bits__
 
   * irrational numbers ? transcendent numbers ?
 
-  * RSA &rightarrow; factorisation of primes = difficult
+  * RSA &rightarrow; factorisation in primes = difficult
 
     &Rightarrow; fraction approximation of real numbers = difficult
 
@@ -258,17 +257,17 @@ big/little endian : most/least significant byte in lowest memory
 
 * Example 1: decimal 23
 
-$$\begin{align}23 &= 2\times 10^1 + 3\times 10^0\newline &=  1\times 2^4 + 0 \times 2^3 + 1\times 2^2 + 1\times 2^1 + 1\times 2^0=\_b 10111\newline &= \_B 17\end{align}$$
+  $\begin{align}23 &= 2\times 10^1 + 3\times 10^0\newline &=  1\times 2^4 + 0 \times 2^3 + 1\times 2^2 + 1\times 2^1 + 1\times 2^0=\_b 10111\newline &= \_B 17\end{align}$
 
 * Example 2 : decimal 1025
 
-````python
-x = 23
-x.to_bytes(1, 'big')
-y = 1025
-y.to_bytes(2, 'big')     # big endian
-y.to_bytes(2, 'little')  # little endian
-````
+    ```python
+    x = 23
+    x.to_bytes(1, 'big')
+    y = 1025
+    y.to_bytes(2, 'big')     # big endian
+    y.to_bytes(2, 'little')  # little endian
+    ```
 
 ---
 
@@ -295,9 +294,7 @@ quiet NaN and signalling NaN
 
 ### number representation (5/5)
 
-* Exercise
-
-````python
+```python
 x = 1/10
 print(x)
 x.as_integer_ratio()
@@ -307,7 +304,7 @@ y = 3 * 10 - 1
 print(y)
 format(y, '.24g') # 24 significative digits
 y.as_integer_ratio()
-````
+```
 
 <div class="exo">representation</div>
 
@@ -326,40 +323,40 @@ y.as_integer_ratio()
 ### declaration, initialisation, and allocation (2/3)
 
 
-````C
+```C
 int a; // declaration : 'a' points to (random) 'int'-sized memory
 a = 3; // allocation : x0000 0000 0000 0011 into memory
 string b = "Hello world!"; // initialisation = declaration + allocation
-````
+```
 
-````python
+```python
 a = int() # initialisation : a --> memory containing '0'
 a = 3     # same memory now contains '3'
 b = "Hello world!" # b --> another memory block
-````
+```
 
 ---
 
 ### declaration, initialisation, and allocation (3/3)
 
-data type &rightarrow; __constructor__
+* data type &rightarrow; __constructor__
 
-* `x = set([1, 2, 3])` equivalent to `x = {1, 2, 3}`
+    * `x = set([1, 2, 3])` equivalent to `x = {1, 2, 3}`
 
-* `x = list([1, 2, 3])` equivalent to `x = [1, 2, 3]`
+    * `x = list([1, 2, 3])` equivalent to `x = [1, 2, 3]`
 
-* `x = int(5.0)` equivalent to `x = 5`
+    * `x = int(5.0)` equivalent to `x = 5`
 
-also allows to __cast__ variables (change data type)
+* also allows to __cast__ variables (change data type)
 
-````python
-x = "5"
-print("x is of type {}".format(type(x)))
-y = int(x)
-print("y is of type {}".format(type(y)))
-z = tuple(y)
-print("z is of type {}".format(type(z)))
-````
+    ```python
+    x = "5"
+    print("x is of type {}".format(type(x)))
+    y = int(x)
+    print("y is of type {}".format(type(y)))
+    z = tuple(y)
+    print("z is of type {}".format(type(z)))
+    ```
 
 <div class="exo">casting</div>
 
@@ -367,17 +364,17 @@ print("z is of type {}".format(type(z)))
 
 ### More on containers: mutable or immutable (1/4)
 
-Strings are not lists
+* Strings are not lists
 
-* strings can be indexed as lists &#8230;
+    * strings can be indexed as lists &#8230;
 
-* &#8230; but no reassignment
+    * &#8230; but no reassignment
 
-````python
-s = "spam eggs"
-s[4] = " and "
-TypeError
-````
+      ```python
+      s = "spam eggs"
+      s[4] = " and "
+      TypeError
+      ```
 
 ---
 
@@ -385,26 +382,26 @@ TypeError
 
 sets and dictionaries are __unordered__
 
-````python
+```python
 p = {1, 2, 3, 4}
 p[0]
 d = {"a": 1, "b": 2, "c": 3}
 d[0]
-````
+```
 
 ---
 
 ### More on lists, sets, dictionaries, and tuples (3/4)
 
-lists, dictionaries, and sets are mutable
+* lists, dictionaries, and sets &rightarrow; mutable
 
 * object is passed by _reference_
 
-  contents are changed __without__ changing its reference
+  _contents_ are changed __without__ changing its reference
 
 * int, float, str, frozenset, tuple are immutable
 
-  changing contents erases its contents and creates a new object
+  changing contents impossible &Rightarrow; new object
 
 <div class="exo">containers</div>
 
@@ -412,18 +409,13 @@ lists, dictionaries, and sets are mutable
 
 ### More on lists, sets, dictionaries, and tuples (4/4)
 
-`tuple`, `int`, `float`, `string`, `frozenset`, &#8230; &rightarrow; immutable
+* `tuple`, `int`, `float`, `string`, `frozenset`, &#8230; &rightarrow; immutable
 
 * object is hashable (unique `id`) &rightarrow; indexing
 
-````python
-x = (1, 2, 3)
-x[0]
-x[0] = 0
-````
-
-````python
-s = "Hello world!"
-s[-1]
-s[-1] = "s"
-````
+   ```python
+   x = (1, 2, 3)      # immutable & hashable
+   s = "Hello world!" # immutable & hashable
+   d = {x: 0, s: 1}   
+   print(d[(1, 2, 3)])
+   ```
