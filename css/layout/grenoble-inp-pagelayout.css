@@ -127,3 +127,8 @@
   font-size: 75%;
   position: absolute;
 }
+
+.see-also {
+    text-align: right;
+    width: 100%;
+}
