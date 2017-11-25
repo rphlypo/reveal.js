@@ -51,6 +51,10 @@ body {
 .reveal ol ul li {
   font-size: small; }
 
+.reveal code {
+  font-size: 125%;
+  line-height: 125%; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -60,7 +64,7 @@ body {
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 28px;
+  font-size: 175%;
   font-weight: normal;
   color: #222; }
 

@@ -24,7 +24,7 @@ $headingColor: #222;
 
 $blockMargin: 20px;
 
-$mainFontSize: 28px;
+$mainFontSize: 175%;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
@@ -106,6 +106,10 @@ body {
 	font-size: $SecondLevelFontSize;
 }
 
+.reveal code {
+	font-size: 125%;
+	line-height: 125%;
+}
 
 // Theme template ------------------------------
 @import "../template/theme";
