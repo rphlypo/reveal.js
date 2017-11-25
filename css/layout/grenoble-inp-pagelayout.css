@@ -129,6 +129,15 @@
 }
 
 .see-also {
-    text-align: right;
     width: 100%;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.warning {
+    background-color:#C6463D;
+    color: #FFF;
+    text-align:center;
+    font-weight: bold;
 }
