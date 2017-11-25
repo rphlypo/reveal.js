@@ -1,12 +1,12 @@
 ## Part III
 ### Variables and variable manipulation in python
 
-```python
+<pre><code data-trim data-noescape class="python">
 a = int()             # initialisation (no mere declaration!)
 b = "Hello world!"    # No declaration, only initialisation
 b = 3                 # Type change without any problem
-b == 3.0              # dynamic variables ! b is casted to float before comparison
-```
+b == 3.0              # dynamic variables ! b is casted to float before comparison
+</code></pre>
 
 ---
 
@@ -28,7 +28,7 @@ b == 3.0              # dynamic variables ! b is casted to float before compari
 
 ---
 
-### indexing in Python (1/2)
+### indexing in Python (1/3)
 
 Example
 
@@ -52,19 +52,23 @@ x = [1, 2, 3, 4, 5, 6]
 
 ---
 
-### indexing in Python (2/2)
+### indexing in Python (2/3)
+
+<div class="warning fragment fade-up" data-fragment-index="1">the `stop` index is not included!</div>
 
 * the slicer `:` (lists, tuples, strings)
 
-  * `start:stop` all elements from index `start` to `stop` (not included)
+  * `start:stop`
+  * `:stop`
+  * `start:`
+  * `start:stop:step`
+  * `start::step`
+  * `:stop:step`
+  * `::step`
 
-  * `:stop` all elements up to (but not including) index `stop`
+---
 
-  * `start:` all elements from `start` on
-
-  * `start:stop:step`: all elements from `start` to `stop`, stepping by `step`
-
-  * also valid `start::step`, `:stop:step` and `::step`
+### indexing in Python (3/3)
 
 ```python
 s = "Hello world!"
@@ -150,7 +154,7 @@ s[::-1] # !dlrow olleH
 
 ### basic operators in Python (5/5)
 
-Exercise: what truth value (`True` or `False`) should the following expressions return ?
+Exercise: what are the truth values (`True` or `False`) ?
 
 ```python
 5 == 5
@@ -173,9 +177,9 @@ x >> k == x // 2 ** k
 
 ### strings and docstrings (1/2)
 
-* strings are encapsulated by ' ' or " " (''' ''' or """ """ for multiline)
+* strings are encapsulated by '&emsp;' or "&emsp;" ('''&emsp;''' or """&emsp;""" for multiline)
 
-* docstrings start with # or are encapsulated by """   """ (multiline)
+* docstrings start with `#` or are encapsulated by """&emsp;""" (multiline)
 
     ```{python}
     s1 = "Hello world!"     # basic string of which I'm the docstring
@@ -193,21 +197,21 @@ x >> k == x // 2 ** k
 
 ### strings and docstrings (2/2)
 
-* `<string>.format(<value>)`
+* string formatting: `<string>.format(<value>)`
 
-    * string contains `{}` &rightarrow; in order of presentation
+    * `{}` &rightarrow; in order of presentation
 
-    * string contains `{<key>}` &rightarrow; key&mdash;value pairs
+    * `{<key>}` &rightarrow; key&mdash;value pairs
 
-    * string contains `{<key> : <formatter>}` &rightarrow; formatting is chosen
+    * `{<key> : <formatter>}` &rightarrow; formatting is chosen
 
-    ```python
-    "I am a {}".format("string")
-    "x equals {}, y equals {}".format(3, 5)           # order of appearance
-    "x equals {x}, y equals {y}".format(x = 3, y = 7) # key-value pairs
-    "x equals {:.5g}".format(1/3)
-    "x equals {x:.5g}, y equals {y:.5f}".format(x = 10/3, y = 10/7)
-    ```
+```python
+"I am a {}".format("string")
+"x equals {}, y equals {}".format(3, 5)                # order of appearance
+"x = {x}, y = {y}, x = {x} again".format(x = 3, y = 7) # key-value pairs
+"x equals {:.5g}".format(1/3)
+"x equals {x:.5g}, y equals {y:.5f}".format(x = 10/3, y = 10/7)
+```
 
 <div class="exo">strings</div>
 
@@ -245,7 +249,6 @@ computers = manipulation of __bits__
   * $x=(-1)^s\sum_{k=-\infty}^{+\infty}b_k\ 2^k\qquad$    for    $\qquad s, b_k\in \{0,\,1\}$
 
   * signed/unsigned, little/big endian, base-2 binary representation
-
   * stored in memory by byte : 1 Byte = 2 hex = 8 bit $\in \lbrace 0,\,1,\,\ldots,\,9,\,A,\,B,\,C,\,D,\,E,\,F \rbrace^2$, e.g., AF
 
 Note:
@@ -312,6 +315,8 @@ y.as_integer_ratio()
 
 ### declaration, initialisation, and allocation (1/3)
 
+<div class="warning fragment fade-up" data-fragment-index="1">only initialisation in Python</div>
+
 * __declaration__ = type &amp; name ; pointer to memory address
 
 * __allocation__ = allocate specific value to memory block
@@ -342,15 +347,13 @@ b = "Hello world!" # b --> another memory block
 * data type &rightarrow; __constructor__
 
     * `x = set([1, 2, 3])` equivalent to `x = {1, 2, 3}`
-
     * `x = list([1, 2, 3])` equivalent to `x = [1, 2, 3]`
-
     * `x = int(5.0)` equivalent to `x = 5`
 
-* also allows to __cast__ variables (change data type)
+* also allows to __cast__ variables (_convert_ data type)
 
     ```python
-    x = "5"
+    x = "5.1"
     print("x is of type {}".format(type(x)))
     y = int(x)
     print("y is of type {}".format(type(y)))
@@ -393,15 +396,15 @@ d[0]
 
 ### More on lists, sets, dictionaries, and tuples (3/4)
 
-* lists, dictionaries, and sets &rightarrow; mutable
+* `list`, `dict`, and `set` &rightarrow; __mutable__
 
-* object is passed by _reference_
+    * object is passed by __reference__
 
-  _contents_ are changed __without__ changing its reference
+    * _contents_ are changed __without__ changing its reference
 
-* int, float, str, frozenset, tuple are immutable
+* `int`, `float`, `str`, `frozenset`, `tuple` &rightarrow; __immutable__
 
-  changing contents impossible &Rightarrow; new object
+    * changing contents &Rightarrow; new reference / object
 
 <div class="exo">containers</div>
 
@@ -411,7 +414,7 @@ d[0]
 
 * `tuple`, `int`, `float`, `string`, `frozenset`, &#8230; &rightarrow; immutable
 
-* object is hashable (unique `id`) &rightarrow; indexing
+* __hashable__ object (unique `id`) &rightarrow; index
 
    ```python
    x = (1, 2, 3)      # immutable & hashable
@@ -419,3 +422,5 @@ d[0]
    d = {x: 0, s: 1}   
    print(d[(1, 2, 3)])
    ```
+
+<div class="exo">matrix</div>

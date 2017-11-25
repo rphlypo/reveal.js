@@ -1,5 +1,5 @@
 ## Part VII
-### Classes and Objects
+### Classes and Objects
 
 ```python
 class Program(object):
@@ -27,10 +27,14 @@ class Program(object):
 
     * concrete realisation / instance of `class`
 
+---
+
+### `class` and `object`
+
 * examples:
 
-| `class` | `instance` |
-|:---|:---|
+| `class` | `instance` |
+|---:|:---|
 | movie | Monty Python and the Holy Grail |
 | cat | the albino cat of the neighbours |
 | person | you |
@@ -47,12 +51,12 @@ class Program(object):
 
 * equivalent to __constructor__ in other languages
 
-```python
-class Graph:
-    def __init__(self, nodes, edges):
-        self.nodes = nodes
-        self.edges = edges
-```
+    ```python
+    class Graph:
+        def __init__(self, nodes, edges):
+            self.nodes = nodes
+            self.edges = edges
+    ```
 
 <div class="exo">class declaration</div>
 
@@ -64,20 +68,20 @@ class Graph:
 
 * class attribute = `constant` for the __class__
 
-* regular attribute = `variable` for an __instance__
+* regular attribute = `variable` for the __class__, `constant` for an __instance__
 
-```python
-class Quadrilateral:
-    n_sides = 4                # class attribute
-    def __init__(self, sides): # __init__
-        self.sides = sides     # instance attribute
+    ```python
+    class Quadrilateral:
+        n_sides = 4                # class attribute
+        def __init__(self, sides): # __init__
+            self.sides = sides     # instance attribute
 
-    def circumference(self):   # instance method
-        circumference = 0
-        for s in self.sides:
-            circumference += s
-        return circumference
-```
+        def circumference(self):   # instance method
+            circumference = 0
+            for s in self.sides:
+                circumference += s
+            return circumference
+    ```
 
 ---
 
@@ -91,7 +95,7 @@ print(q.circumference())
 print(q.valid_)      # prints "True"
 ```
 
-<div class="exo">attributes and methods</div>
+<div class="exo">attr &amp; methods</div>
 
 ---
 
@@ -107,7 +111,7 @@ class Rectangle(Quadrilateral):
     # no need to define circumference and n_sides --> inherited from Quadrilateral !
 ```
 
-* python offers multiple inheritance
+* python offers _multiple_ inheritance
 
 <div class="exo">inheritance</div>
 
@@ -119,20 +123,20 @@ class Rectangle(Quadrilateral):
 
 * `super().method()` calls method from parent
 
-```python
-class A:
-    def __init__(self, x):
-        self.x = x
-    def method(self):
-        print(self.x)
+    ```python
+    class A:
+        def __init__(self, x):
+            self.x = x
+        def dosomething(self):
+            print(self.x)
 
-class B(A):
-    def __init__(self, x):
-        self.x = x
-    def method(self):
-        print(self.x * 10)
-        super().method()   # prints value of self.x
-```
+    class B(A):
+        def __init__(self, x):
+            self.x = x
+        def dosomething(self):      # priority
+            print(self.x * 10)
+            super().dosomething()   # prints self.x
+    ```
 
 ---
 
@@ -142,19 +146,23 @@ class B(A):
 
 * many others: __overloading__ operators
 
-| magic | operator |
+---
+
+### magic methods
+
+| operator | magic |
 |:---:|:---:||:--:|:---:|
-| `__add__`, `__sub__`, `__mul__`, `__truediv__` | `+`, `-`, `*`, `/` |
-| `__floordiv__`, `__mod__`, `__pow__` | `//`, `%`, `**` |
-| `__and__`, `__or__`, `__xor__` | `&`, <code>&#124;</code>, `^` |
-| `__lt__`, `__gt__`, `__le__`, `__ge__` | `<`, `>`, `<=`, `>=` |
-| `__eq__`, `__ne__` | `==`, `!=` |
-| `__contain__`, `__len__`  | `in`, `len` |
-| `__getitem__`, `__call__` | `[]`, `()` |
-| `__repr__` | output of `print` |
+| `+`, `-`, `*`, `/` | `__add__`, `__sub__`, `__mul__`, `__truediv__` |
+| `//`, `%`, `**` | `__floordiv__`, `__mod__`, `__pow__` |
+| `&`, <code>&#124;</code>, `^` | `__and__`, `__or__`, `__xor__` |
+| `<`, `>`, `<=`, `>=` | `__lt__`, `__gt__`, `__le__`, `__ge__` |
+| `==`, `!=` | `__eq__`, `__ne__` |
+| `in`, `len` | `__contain__`, `__len__`  |
+| `[]`, `()` | `__getitem__`, `__call__` |
+| output of `print` | `__repr__` |
 
 Note:
-the `__int__`, `__float__` tells how to cast the variable
+the `__int__`, `__float__`, `__str__` tells how to cast the object
 
 ---
 
@@ -212,11 +220,15 @@ class Rectangle:
 
     @staticmethod
     def validate_lengths(width, height):
-        numeric = (int, long, float)
+        numeric = (int, float)
         if not (isinstance(width, numeric) and
                 isinstance(height, numeric)):
             raise ValueError("Lengths must be numerical values")
+
+Rectangle.validate_lengths(2, 3)
 ```
+
+<div clas="exo">staticmethod</div>
 
 ---
 
@@ -239,9 +251,13 @@ r = Rectangle(2, 5)
 print(r.area)    # and not r.area() !
 ```
 
+<div class="exo">property</div>
+
 ---
 
 ### getter / setter
+
+<div class="warning fragment fade-up" data-fragment-index="1">not pythonic! avoid whenever possible</div>
 
 ```python
 class Rectangle:
@@ -272,3 +288,5 @@ Implement a `computation graph`, where each node is an addition, subtraction, mu
 
 1. computations are carried out in the order of appearance in the graph
 2. computations respect the mathematical priority rules
+
+<div class="exo">computation graph</div>

@@ -65,7 +65,11 @@ with open("reveal.js/index.html") as f:
 
 * save all your statements in a `.py`, e.g., `test.py`
 
-* you can execute all statements by running `python test.py`
+* execute statements &rightarrow; command line
+
+  ```bash
+  python test.py
+  ```
 
 ---
 
@@ -77,7 +81,7 @@ with open("reveal.js/index.html") as f:
 
 * __packages/libraries__ contain multiple modules
 
-    ```shell
+    ```bash
     #!/usr/bin/python
     ```
 
@@ -85,6 +89,7 @@ with open("reveal.js/index.html") as f:
     if __name__ == "__main__":
         # some executable code if called
     ```
+
 ---
 
 ### Using modules
@@ -103,6 +108,8 @@ with open("reveal.js/index.html") as f:
 
     * __avoid__ whenever possible!
 
+<div class="exo">modules</div>
+
 ---
 
 ### Python's standard library
@@ -111,7 +118,7 @@ with open("reveal.js/index.html") as f:
 
     * e.g., `math`, `sys`, `random`, `datetime`, `email`, &#8230;
 
-* adds functionality
+    * adds elementary functionality
 
 * other packages/modules
 
@@ -120,3 +127,21 @@ with open("reveal.js/index.html") as f:
     * `conda` (Anaconda inc.)
 
     * &#8230;
+
+---
+
+### scientific Python stack
+
+* `numpy`
+
+    * numerical computation
+
+* `scipy`
+
+    * special functions
+
+    * ODE solvers, &#8230;
+
+* `matplotlib`
+
+    * static plotting

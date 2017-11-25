@@ -38,6 +38,7 @@ while motivated:
     except:                     # others handled separately
         print("Any other lands here")
     ```
+    <!-- .element class="fragment fade-up" data-fragment-index="1" -->
 
 <div class="exo">Exceptions</div>
 
@@ -48,9 +49,9 @@ while motivated:
 
 * 2 boolean values : `True` and `False`
 
-* comparison operators : `==`, `>`, `<`, `<=`, `>=`, `~=`, `is`
+* comparison operators : `==`,&ensp; `>`,&ensp; `<`,&ensp; `<=`,&ensp; `>=`,&ensp; `~=`,&ensp; `is`
 
-* negation: `not`, `!`
+* negation: `not`,&ensp; `!`
 
 ---
 
@@ -64,8 +65,8 @@ print(True == 1 is True) # operator precedence?
 
 | operator | meaning |
 |:-------- |:----|
-| `==` | similar _or_ equal in __value__|
-| `is` | identical _or_ same __object__ |
+| `==` | __similar__ _or_ equal in __value__|
+| `is` | __identical__ _or_ same __object__ |
 
 ---
 
@@ -74,8 +75,7 @@ print(True == 1 is True) # operator precedence?
 * joining statements &rightarrow; logical operations
 
     * `and`, `or`
-
-    * bitwise `&` (and), `|` (or), `^` (xor)
+    * bitwise: `&` (and), `|` (or), `^` (xor)
 
 ```python
 print(True and False)
@@ -111,28 +111,30 @@ print(bin(12 ^ 10))            # dynamic
 
 ### compound statements
 
+<div class="warning fragment fade-up" data-fragment-index="1">four spaces (&bbrk;&bbrk;&bbrk;&bbrk;), please, avoid `tab` (&#11134;) !</div>
+
 * compound statement = header + suite
 
 * separator `:`
 
 * suite &rightarrow; __4 space__ indentation
 
+    ```python
+    if True:
+        print("execute me")
+    ```
+
   * header:<br />
     &bbrk;&bbrk;&bbrk;&bbrk;suite
-
-```python
-if True:
-    print("execute me")
-```
 
 ---
 
 ### flow control: `while`
 
-* while <condition>:
-  &bbrk;&bbrk;&bbrk;&bbrk;<suite>
+* while condition:<br />
+  &bbrk;&bbrk;&bbrk;&bbrk;suite
 
-* repeat <suite> as long as `bool(<condition>)` is `True`
+* repeat `suite` as long as `bool(condition)` is `True`
 
 ```python
 l = list(range(10))   # list with elements from 0 to 9
@@ -165,7 +167,7 @@ elif weather is "rainy":
 
 ### `for`-statement
 
-* `for` iterates over an __iterable__ (an iterator)
+* `for` iterates over an __iterable__ (&mapsto; __iterator__)
 
 * __iterables__: lists, dictionaries, tuples, &#8230; all objects that implement `__iter__`
 
@@ -178,9 +180,9 @@ elif weather is "rainy":
 
     ```python
     l = ["spam", "eggs"]
-    for word in l:         # does literally iterate over elements in l
+    for word in l:         # literally iterates over elements in l
         print(word)
-    for character in l[0]: # does iterate over elements in l[0]="spam"
+    for character in l[0]: # iterates over elements in l[0]="spam"
         print(character)
     ```
 
@@ -190,11 +192,20 @@ elif weather is "rainy":
 
 ### iterables, iterators, generators, &#8230;
 
-* __iterable__: returns its members one after another `__getitem__()`
+* __iterable__: returns its members one after another
 
-* __iterator__: datastream returning member after member `__next__()`
+    * `__getitem__()`
 
-* __generator__: function yielding a series of objects `yield`
+* __iterator__: datastream returning member after member
+
+    * `__next__()`
+
+* __generator__: function yielding a series of objects
+
+    * `yield`
+
+Note:
+generators require less memory, iterable not saved in memory
 
 ---
 
@@ -208,13 +219,15 @@ Borrowed from [nvie.com](http://nvie.com/posts/iterators-vs-generators/)
 
 ### `range`
 
+<div class="warning fragment fade-up" data-fragment-index="1">`range(5)` cannot be indexed (it is not an iterable!)</div>
+
 * `range(start, stop, step)`
 
-    * `range(5)` &rightarrow; `[0, 1, 2, 3, 4]`
+    * `range(5)` &sim; `[0, 1, 2, 3, 4]`
 
-    * `range(2, 5)` &rightarrow; `[2, 3, 4]`
+    * `range(2, 5)` &sim; `[2, 3, 4]`
 
-    * `range(0, 5, 2)` &rightarrow; `[0, 2, 4]`
+    * `range(0, 5, 2)` &sim; `[0, 2, 4]`
 
 * `iterator`, not an `iterable`
 
@@ -222,7 +235,7 @@ Borrowed from [nvie.com](http://nvie.com/posts/iterators-vs-generators/)
 
 ---
 
-### list comprehension
+### list comprehension (very, very Pythonic)
 
 * constructing lists from iterators
 
@@ -236,8 +249,10 @@ Borrowed from [nvie.com](http://nvie.com/posts/iterators-vs-generators/)
 * more involved with conditional statements
 
   ```python
-  w = [(x, y) for x in [1, 2, 3] for y in [1, 2, 3] if x < y]
-  t = [(x, y) if x < y else (x, ) for x in [1, 2, 3] for y in [1, 2, 3]]
+  w = [(x, y) for x in [1, 2, 3]
+       for y in [1, 2, 3] if x < y]
+  t = [(x, y) if x < y else (x, )
+       for x in [1, 2, 3] for y in [1, 2, 3]]
   ```
 
 ---
@@ -252,12 +267,12 @@ Borrowed from [nvie.com](http://nvie.com/posts/iterators-vs-generators/)
 
 * `pass`: does nothing (but syntactical necessity)
 
-```{python}
-try:
-    1/0
-except ZeroDivisionError:
-    pass
-finally:
-    print("all is ok, we do as if nothing happened")
-```
-<div class="exo">primes</div>
+    ```python
+    try:
+        1/0
+    except ZeroDivisionError:
+        pass
+    finally:
+        print("all is ok, we do as if nothing happened")
+    ```
+<div class="exo">prime sift</div>

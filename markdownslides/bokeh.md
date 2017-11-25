@@ -15,36 +15,19 @@ show(p)
 
 ### Plotting libraries
 
-* [matplotlib](http://matplotlib.org)
+* [matplotlib](http://matplotlib.org): matlab-like, no "one and only one obvious way &#8230;"
+<!-- .element: class="fragment fade-out" data-fragment-index="1" -->
 
-  * matlab-like plotting
+* [seaborn](http://seaborn.pydata.org): matplotlib overlay, statistical data visualisation
+<!-- .element: class="fragment fade-out" data-fragment-index="1" -->
 
-  * against "one and only one obvious way &#8230;"
+* [mayavi](http://code.enthought.com/projects/mayavi/): 3D rendering by [Enthought](https://www.enthought.com)
+<!-- .element: class="fragment fade-out" data-fragment-index="1" -->
 
-* [seaborn](http://seaborn.pydata.org)
+* [bokeh](https://bokeh.pydata.org/en/latest/index.html): javascript = notebook + interaction, interfaces with `python`, `R`, `scala`, and `julia`
 
-  * matplotlib customisation
-
-  * statistical data visualisation
-
-* [mayavi](http://code.enthought.com/projects/mayavi/)
-
-  * 3D rendering by [Enthought](https://www.enthought.com)
-
-* [bokeh](https://bokeh.pydata.org/en/latest/index.html)
-  <!-- .element: class="fragment grow" data-fragment-index="1" -->
-
-  * javascript based (notebook compatibility)
-
-  * focus on interaction
-
-  * interfaces with `python`, `R`, `scala`, and `julia`
-
-* [plot.ly](https://plot.ly/python/)
-
-  * online account
-
-  * focus on interaction
+* [plot.ly](https://plot.ly/python/): online account, interaction
+<!-- .element: class="fragment fade-out" data-fragment-index="1" -->
 
 ---
 

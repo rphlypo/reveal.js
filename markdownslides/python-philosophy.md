@@ -133,13 +133,13 @@ print("Hello world!")
 
 * object = 1<sup>st</sup> class citizen
 
-    functions, strings, integers, &#8230; are all objects
+    * functions, strings, integers, &#8230; are all objects
 
 * object = description + actions
 
-    description: characteristics or _attributes_
+    * description: characteristics or _attributes_
 
-    action: change attributes or functionality of this or other objects
+    * action: _methods_ to change attributes or functionality
 
 ---
 
