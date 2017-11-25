@@ -1,8 +1,8 @@
-## Part VI
+## Part V
 ### handling input/output
 
 ```python
-with open('test.html', 'r') as f:
+with open('test.txt', 'w+') as f:
     line = True
     linecount = 0
     while line:
@@ -36,38 +36,87 @@ with open("reveal.js/index.html") as f:
 
 ---
 
-### handling files (1/)
+### handling files
 
-* files should be opened, processed, and closed
+* a file must be opened, manipulated, then closed
 
-* `open(<filename>, <mode>)` with modes
+    ```python
+    fid = open("file.ext", "mode")
+    # manipulate file
+    fid.closed # returns False
+    fid.close()
+    fid.closed # returns True
+    ```
 
-    * `r` read only
+* easier &rightarrow; context manager
 
-    * `w` rewrite = erase file and write
+    ```python
+    with open("file.ext", "mode") as fid:
+        # manipulate file
+        fid.closed # returns False
+    fid.closed # returns True
+    ```
 
-    * `a` append
-
-    * `b` (modifier `rb`, `wb`, `ab`) binary mode
-
-    * `+` (modifier `r+`, `w+`, `a+`)
-
-```python
-fid = open('file.txt', 'r')
-# do operations on file.txt through fid
-close(fid)
-```
+<div class="exo">file handling  </div>
 
 ---
 
-### handling files (2/)
+### scripts
 
-* one should not forget to `close`
+* save all your statements in a `.py`, e.g., `test.py`
 
-* better: context &rightarrow; _file identifier_ only defined within context `with`
+* you can execute all statements by running `python test.py`
+
+---
+
+### modules &amp; packages
+
+* a collection of variables, functions, statements, &#8230;
+
+* modules __extend__ python's standard functions (quite limited)
+
+* __packages/libraries__ contain multiple modules
+
+    ```shell
+    #!/usr/bin/python
+    ```
 
     ```python
-    with open('file.txt', 'r') as fid:
-        #do operations on file.txt through fid
-    close(fid) # will return error, since fid not defined outside context
+    if __name__ == "__main__":
+        # some executable code if called
     ```
+---
+
+### Using modules
+
+* `import module`
+
+    * functions must be called as `module.function`
+
+* `from module import function1, function2`
+
+    * only specific functions
+
+    * functions can be called as `function1`
+
+* `from module import *`
+
+    * __avoid__ whenever possible!
+
+---
+
+### Python's standard library
+
+* a collection of modules available in the Python distribution
+
+    * e.g., `math`, `sys`, `random`, `datetime`, `email`, &#8230;
+
+* adds functionality
+
+* other packages/modules
+
+    * `Pypi` (Python package index)
+
+    * `conda` (Anaconda inc.)
+
+    * &#8230;

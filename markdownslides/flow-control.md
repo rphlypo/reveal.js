@@ -206,6 +206,22 @@ Borrowed from [nvie.com](http://nvie.com/posts/iterators-vs-generators/)
 
 ---
 
+### `range`
+
+* `range(start, stop, step)`
+
+    * `range(5)` &rightarrow; `[0, 1, 2, 3, 4]`
+
+    * `range(2, 5)` &rightarrow; `[2, 3, 4]`
+
+    * `range(0, 5, 2)` &rightarrow; `[0, 2, 4]`
+
+* `iterator`, not an `iterable`
+
+    * `list(range(5))` transforms into iterable
+
+---
+
 ### list comprehension
 
 * constructing lists from iterators
@@ -226,25 +242,22 @@ Borrowed from [nvie.com](http://nvie.com/posts/iterators-vs-generators/)
 
 ---
 
-### handling files
+### `break`, `continue`, and `pass`
 
-* a file must be opened, manipulated, then closed
+* `break`: breaks out of innermost `for`- or `while`-loop
 
-    ```python
-    fid = open("file.ext", "mode")
-    # manipulate file
-    fid.closed # returns False
-    fid.close()
-    fid.closed # returns True
-    ```
+    * `else` executed if no break occurs
 
-* easier &rightarrow; context manager
+* `continue`: continues with next iteration of loop
 
-    ```python
-    with open("file.ext", "mode") as fid:
-        # manipulate file
-        fid.closed # returns False
-    fid.closed # returns True
-    ```
+* `pass`: does nothing (but syntactical necessity)
 
-<div class="exo">file handling  </div>
+```{python}
+try:
+    1/0
+except ZeroDivisionError:
+    pass
+finally:
+    print("all is ok, we do as if nothing happened")
+```
+<div class="exo">primes</div>
