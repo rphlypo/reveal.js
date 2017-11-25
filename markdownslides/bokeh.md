@@ -1,5 +1,5 @@
 ## Part IX
-### plotting with python
+### Interactive plotting in Python
 
 ```python
 from bokeh.plotting import figure, output_file, show
@@ -50,11 +50,11 @@ show(p)
 
 ### bokeh
 
-* bokeh let's you focus on your __data__
+* bokeh: focus on your __data__
 
 * easy to create __webapp__ from your python code
 
-  * everyone with a (modern) browser can access web apps
+  * (modern) web browser &leftrightarrow; web apps
 
   * multi-platform
 

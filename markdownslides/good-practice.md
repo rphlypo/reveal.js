@@ -1,5 +1,5 @@
 ## Part VIII
-### good coding practice
+### Good coding practice
 
 ```bash
 mypackage/

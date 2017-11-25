@@ -1,9 +1,9 @@
 ## Part I
 ### Python : a philosophy
 
-````python
+```python
 print("Hello world!")
-````
+```
 
 ---
 

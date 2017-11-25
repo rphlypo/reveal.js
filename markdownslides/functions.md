@@ -1,15 +1,15 @@
 ## Part VI
 ### Functions
 
-~~~~{.python}
+```python
 def square(x):
     return x ** 2
 s = [square(x) for x in range(1, 11)]
-~~~~
+```
 
 ---
 
-### What is a function
+### What is a function ?
 
 * a __function__ takes arguments, __operates__ on these, and (optionally) __returns__ a result
 

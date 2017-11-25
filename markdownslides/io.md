@@ -1,5 +1,5 @@
 ## Part V
-### handling input/output
+### Handling input/output
 
 ```python
 with open('test.txt', 'w+') as f:
