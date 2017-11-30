@@ -227,19 +227,3 @@ joker dimension -1
 
 <div class="exo">broadcasting</div>
 <div class="see-also">[broadcasting](https://docs.scipy.org/doc/numpy-dev/user/basics.broadcasting.html)</div>
-
----
-
-### to go further
-
-| package | description |
-|:---|:---|
-| `pandas` | &rightarrow; data exploration, requests, manipulation, plotting, &#8230;<br />&rightarrow; special functions for timeseries |
-| `scipy` | &rightarrow; special functions<br />&rightarrow; signal processing<br />&rightarrow; numerical integration/differentiation |
-| `sympy` | &rightarrow; formal computation, symbolic computing |
-| `scikit-learn` | &rightarrow; machine learning |
-| `skimage` | &rightarrow; image processing |
-
----
-
-## Many, many thanks to you all!
