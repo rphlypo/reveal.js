@@ -82,16 +82,16 @@ IDLE, Spyder, IPython, Jupyter notebook
 
 ---
 
-### python modules
+### The Jupyter notebook
 
-1. use your favorite text editor (or an IDLE)
+<div class="warning fragment fade-up" data-fragment-index="1">Once a variable is declared it can be used everywhere else!</div>
 
-1. python code &rightarrow; `mymodule.py`
+* extension of IPython
 
-     * shebang `#!/usr/bin/python`
+* cells can be executed in any order
 
-1. `if __name__="main":`
+* mixing code, figures, and text (annotations)
 
-     * `if` &rightarrow; `python mymodule.py` from command line
+* declaration of variables in temporal order, not spatial order!
 
-     * `import mymodule` in script
+<div class="exo">NB Intro</div>

@@ -169,14 +169,14 @@ elif weather is "rainy":
 
 * `for` iterates over an __iterable__ (&mapsto; __iterator__)
 
-* __iterables__: lists, dictionaries, tuples, &#8230; all objects that implement `__iter__`
+* __iterables__: lists, tuples, &#8230; all objects that implement `__getitem__`
 
     ```python
     L = list()
     print(L.__iter__())  # lists implement an iterator method
     ```
 
-* iterating over elements of an iterator
+* iterating over elements of an __iterator__
 
     ```python
     l = ["spam", "eggs"]
