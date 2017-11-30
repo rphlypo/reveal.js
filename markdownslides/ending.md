@@ -17,6 +17,8 @@ import this
 | `scikit-learn` | &rightarrow; machine learning |
 | `skimage` | &rightarrow; image processing |
 
+<div class="see-also">[scientific Python lectures](http://www.scipy-lectures.org)</div>
+
 ---
 
 ## Many, many thanks to you all!
