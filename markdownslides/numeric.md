@@ -149,15 +149,18 @@ z = np.diag(z.sum(axis=1)) - z  # Laplacian of the fully connected symmetric gra
 ### reshaping
 
 * reshape/resize
+
     * `reshape` &rightarrow; __return__ reshaped
     * `resize` &rightarrow; __in-place__ reshape
 
 * ravel/flatten/flat
+
     * `ravel` &rightarrow; __return__ unfolded
     * `flatten` &rightarrow; __in-place__ unfolding
     * `flat` &rightarrow; __return__ iterator
 
 * transpose
+
     * `T` &rightarrow; __return__ transposed
 
 Note:
@@ -172,12 +175,10 @@ joker dimension -1
 
 * `ndarray` = `list` + extra attributes &Rightarrow; mutable
 
-* memory organisation &equiv; list + __view__
+* memory organisation &equiv; list + __view__ &rightarrow; shape
 
-  * shape &in; __view__ (2, 3)
     * C-order _row first_ &mapsto; [[0, 1, 2], [3, 4, 5]]
     * Fortran-order _column first_ &mapsto; [[0, 2, 4], [1, 3, 5]]
-
 
 | method | description |
 |:---|:---|
@@ -211,7 +212,7 @@ joker dimension -1
 
 ---
 
-### indexing revisited
+### advanced indexing and broadcasting
 
 * repeated indices &rightarrow; using `ndarray`s as indices
 
