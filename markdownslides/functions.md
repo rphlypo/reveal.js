@@ -228,7 +228,7 @@ def fun(a, b, *args, c=1, d=2, **kwargs):
   * innermost scope: local variables
   * scopes of enclosing functions (__closure__): from nearest to furthest
   * next-to-last: module global variables
-  * outermost: built-in <a href="https://docs.python.org/3.6/library/functions.html">functions</a> and <a href="https://docs.python.org/3.6/library/stdtypes.html">types</a>
+  * outermost: built-in [functions](https://docs.python.org/3.6/library/functions.html) and [types](https://docs.python.org/3.6/library/stdtypes.html)
 
 ---
 
@@ -297,7 +297,7 @@ def func1(a):
     print(add(2, 3))
     ```
 
- <div class="see-also">See also <a href="https://www.python.org/dev/peps/pep-0318/">pep 318</a></div>
+ <div class="see-also">See also [pep 318](https://www.python.org/dev/peps/pep-0318/)</div>
 
 ---
 
@@ -334,7 +334,7 @@ print(l)
 
 * `nonlocal` ($\geq$ Python 3)
 
-<div class="see-also">See also <a href="https://www.python-course.eu/python3_global_vs_local_variables.php">local, global, and nonlocal variables</a></div>
+<div class="see-also">[local, global, and nonlocal variables](https://www.python-course.eu/python3_global_vs_local_variables.php)</div>
 
 ---
 

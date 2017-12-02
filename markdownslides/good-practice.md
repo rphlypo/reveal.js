@@ -51,16 +51,12 @@ mypackage/
 
 ---
 
-### readable code (1/2)
+### readable code
 
 * use sensible variable names
 
   * ~~x, y, z~~
   * n_persons, xcoord, area, &#8230;
-
----
-
-### readable code (2/2)
 
 * cases
 
@@ -73,6 +69,6 @@ mypackage/
 
 ---
 
-### wetted your appetite?
+### still having appetite?
 
-<div class="see-also">see [best of the best practices guide for Python](<div class="see-also">https://gist.github.com/sloria/7001839)</div>
+<div class="see-also">see [best of the best practices guide for Python](https://gist.github.com/sloria/7001839)</div>
