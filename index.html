@@ -27,89 +27,24 @@
 		<!--setting up the Grenoble INP page layout-->
 		<div id="wrapper">
 		    <div id="header"></div>
-		    <div id="sidebar"></div>
+		    <div id="sidebar"></div> 
 				<div id="corner"></div>
 				<div id="footer"></div>
-
-				<!-- the next line comes from https://help.pythonanywhere.com/pages/EmbeddedConsoles ; width and height handled in CSS -->
-				<iframe id="PyAn-console" name="embedded_python_anywhere" src="https://www.pythonanywhere.com/embedded3/" style="visibility:hidden"></iframe>
-				<!-- no Python without Monty : source http://www.montypython.com/pythonland/ -->
-				<a id="PyAn-console-close" onclick="PyAnConsole('close'); return false;"  style="visibility:hidden" href="#"><img src="./images/close.png" height="100%" align="middle"></img></a>
-				<a id="PyAn-console-open" onclick="PyAnConsole('open'); return false;" style="visibility:visible" href="https://www.pythonanywhere.com/embedded3/"><img src="./images/codeblock2.png" height="100%" align="right"></a>
 
 				<div id="content">
 					<!--true reveal.js content starts here-->
 					<div class="reveal">
 						<div class="slides">
 							<section data-markdown data-state='title'>
-								# Scientific Python
+								# Jean-Baptiste Joseph Fourier
+								# 21 mars 1768 &mdash; 16 mai 1830
 								#### [Ronald Phlypo](mailto:ronald.phlypo@grenoble-inp.fr)
-								#### Day I &mdash; session 2017&ndash;2018
+								#### 25 Septembre 2018
 							</section>
 
-							<!-- Part I: Python philosophy and history -->
+							<!-- Part I: La vie de Fourier -->
 							<section>
-								<section data-state='aftertitle' data-markdown='markdownslides/python-philosophy.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part II: Python philosophy and history -->
-							<section>
-								<section data-state='aftertitle' data-markdown='markdownslides/environment.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part III: variables in Python -->
-							<section>
-								<section data-markdown='markdownslides/variables.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part IV: Flow control -->
-							<section>
-								<section data-markdown='markdownslides/flow-control.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part V: I/O -->
-							<section>
-								<section data-state='aftertitle' data-markdown='markdownslides/io.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part VI: functions -->
-							<section>
-								<section data-markdown='markdownslides/functions.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part VII: object-oriented programming -->
-							<section>
-								<section data-markdown='markdownslides/object-oriented.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!--Part VIII: good programming practice: unit tests, asserts, nosetests-->
-							<section>
-								<section data-markdown='markdownslides/good-practice.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part IX: plotting -->
-							<section>
-								<section data-markdown='markdownslides/plotting.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part X: data -->
-							<section>
-								<section data-markdown='markdownslides/numeric.md' data-charset='iso-8859-2'>
-								</section>
-							</section>
-
-							<!-- Part End: this is the end, my friend -->
-							<section>
-								<section data-markdown='markdownslides/ending.md' data-charset='iso-8859-2'>
+								<section data-state='aftertitle' data-markdown='markdownslides/FourierVie.md' data-charset='utf-8'>
 								</section>
 							</section>
 
@@ -166,23 +101,6 @@
 			document.getElementById("footer").style.bottom = "40px";
 			document.getElementById("PyAn-console-open").style.visibility = "visible";
 		})
-		</script>
-
-		<script>
-		function PyAnConsole(action) {
-			var divel = document.getElementById("PyAn-console");
-			var divelclose = document.getElementById("PyAn-console-close");
-			var divelopen = document.getElementById("PyAn-console-open");
-		  if (action == "open") {
-		  	divel.style.visibility = "visible";
-				divelclose.style.visibility = "visible";
-				divelopen.style.visibility = "hidden";
-		  } else {
-		  	divel.style.visibility = "hidden";
-				divelclose.style.visibility = "hidden";
-				divelopen.style.visibility = "visible";
-		  }
-		}
 		</script>
 
 	</body>
