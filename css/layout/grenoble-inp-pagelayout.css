@@ -6,65 +6,35 @@
     margin: 0 0 0 0; /* the bottom margin is the negative value of the footer's height */
     position: relative
 }
-
+/*
 #corner {
   position: fixed;
-  height: 600px;
-  width: 600px;
-  top: 0;
-  left: 0;
-  background-image: url(./images/inp-corner.png);
+  height: 200px;
+  width: 200px;
+  top: 50px;
+  left: 10px;
+  background-image: url(./images/PHELMA-cmjn.png);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 0 0;
+  background-size: auto;
+  /*background-position: 0 0;
 }
+*/
 
 #footer {
-    background-image: url(./images/inp-footer.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 40px; /* height + top/bottom paddding + top/bottom border must add up to footer height */
-    width: 70%;
+    height: 50px; /* height + top/bottom paddding + top/bottom border must add up to footer height */
+    width: 76%;
     position: fixed;
-    bottom: 40px;
-    left: 15%;
+    left: 12%;
+    bottom: 0;
+    background: #BE141E;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font: 20px Helvetica, sans-serif;
 }
 
-#PyAn-console{
-  position: fixed;
-  /*bottom: calc((100% - 520px) / 2);*/
-  top: 50px;
-  right: 0;
-  width: 700px;
-  height: 480px;
-  z-index: 2147483647; /* maximum available z-value in modern browsers */
-}
-
-#PyAn-console-open{
-  background-image: url(./images/codeblock.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
-  position: fixed;
-  top: 50px; /* -50px - 480px/2 + 100px / 2*/
-  right: 5px;
-  height: 10%;
-  z-index: 2147483647;
-}
-
-#PyAn-console-close{
-  /* background-image: url(./images/close.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;*/
-  position: fixed;
-  top: 40px;
-  right: 710px;
-  width: 20px;
-  height: 20px;
-  z-index: 2147483647;
-}
+footer.span
 
 .push {
     float: top;
@@ -85,14 +55,10 @@
 #header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 6%;
     height: 50px;
-    width: 100%;
-    background: #cbd3df; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#cbd3df, white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#cbd3df, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#cbd3df, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#cbd3df, white); /* Standard syntax */
+    width: 88%;
+    background: #BE141E;
     text-align: right;
 }
 
@@ -101,13 +67,17 @@
 }
 
 #sidebar {
-    background-color: #3f5970;
-    width: 17px;
-    position: absolute;
-    left: 0;
-    top: 50px;
-    bottom: 0px;
+    position: fixed;
+    left: 10px;
+    top: 60px;
+    height: 168px;
+    width: 262px;
+    background: #BE141E;
+    background-image: url(./images/phelma.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
+
 #main {
     margin-left: 32px
 }
