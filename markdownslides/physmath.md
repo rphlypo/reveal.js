@@ -55,3 +55,32 @@ terre = boule de roches en fusion &rightarrow; se refroidrit + équation de chal
 Fourier ne persévère pas &hellip;
 c'est Lord Kelvin qui exploite ces résultats : 20-40 millions d'années
 
+---
+
+### L'age de la terre
+
+| | | |
+|---:|:---:|:---|
+| 1520 | la contre-réforme | 6 000 ans |
+| 1542 | Fausto da Longiano | 36 000 ans |
+| 1596 | Johannes Kepler | 3993 av. J.-C.|
+| 1647 | John Lightfoot | 3928 av. J.-C. |
+| 1650 | James Ussher | (Génèse) 23 oct. 4004 av. J.-C. 9 p.m. |
+| 1700 | Isaac Newton | 3998 av. J.-C. |
+
+---
+
+### L'age de la terre
+
+| | | |
+|---:|:---:|:---|
+| 1755 | Benoît de Maillet | 2 Mds d'années|
+|| Jean-Baptiste de Lamarck | 4 Mds d'années |
+| 1770 | Georges-Louis Leclerc Buffon | chaleur &rightarrow; 74 000 &ndash; 10 millions |
+| XIX° | Lord Kelvin | Fourier, conduction thermique &rightarrow; 20 à 400 millions |
+|| John Perry | qqs Mds (gradient dans la croûte terrestre) |
+|| Henri Becquerel | radioactivité &rightarrow; 4,54 Mds d'années |
+
+---
+
+<video controls data-autoplay src="./images/projet.mp4"></video>
