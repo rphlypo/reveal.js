@@ -356,7 +356,27 @@ body {
   background-color: #eee; }
 
 .reveal section img {
-  margin: 0px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background: rgba(255, 255, 255, 0.12);
-  border: 0px;
-  box-shadow: 0; }
+  border: 10px;
+  box-shadow: 10px 10px 5px gray; }
+
+.ref {
+  bottom: 50px;
+  width: 100%;
+  left: 20%;
+  height: 12px;
+  font-size: 12px;
+  text-align: right; }
+
+.column {
+  float: left;
+  width: 50%; }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
